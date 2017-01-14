@@ -134,7 +134,6 @@ NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         ("/archive.html", "Archive"),
         ("/categories/", "Tags"),
-        ("/rss.xml", "RSS feed"),
     ),
 }
 
@@ -1088,7 +1087,7 @@ GENERATE_ATOM = False
 # FEED_TEASERS = True
 
 # Strip HTML from Atom annd RSS feed summaries and content. Defaults to False.
-# FEED_PLAIN = False
+FEED_PLAIN = False
 
 # Number of posts in Atom and RSS feeds.
 # FEED_LENGTH = 10
@@ -1102,7 +1101,7 @@ GENERATE_ATOM = False
 # RSS_LINK is a HTML fragment to link the RSS or Atom feeds. If set to None,
 # the base.tmpl will use the feed Nikola generates. However, you may want to
 # change it for a FeedBurner feed or something else.
-# RSS_LINK = None
+RSS_LINK = None
 
 # A search form to search this site, for the sidebar. You can use a Google
 # custom search (https://www.google.com/cse/)

@@ -1,0 +1,4 @@
+Sitemap: https://jed-frey.github.io/sitemapindex.xml
+
+User-Agent: *
+Host: jed-frey.github.io

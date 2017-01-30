@@ -10,10 +10,12 @@
 <link href="assets/css/code.css" rel="stylesheet" type="text/css">
 <link href="assets/css/colorbox.css" rel="stylesheet" type="text/css">
 <link href="assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="canonical" href="https://jed-frey.github.io/">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/test/" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/debugging-shared-library-not-found/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -60,15 +62,90 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/test/" class="u-url">Test</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/debugging-shared-library-not-found/" class="u-url">Debugging &#8220;cannot open shared object file: No such file or&nbsp;directory&#8221;</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 Jed&nbsp;Frey
             </span></p>
-            <p class="dateline"><a href="posts/test/" rel="bookmark"><time class="published dt-published" datetime="2017-01-13T21:36:02-05:00" title="January 2017">January 2017</time></a></p>
+            <p class="dateline"><a href="posts/debugging-shared-library-not-found/" rel="bookmark"><time class="published dt-published" datetime="2017-01-29T11:35:57-05:00" title="January 2017">January 2017</time></a></p>
         </div>
     </header><div class="e-content entry-content">
-    <p>Hello&nbsp;World!</p>
+    <div>
+<p>caffe.bin: error while loading shared libraries: libleveldb.so.1: cannot open shared object file: No such file or&nbsp;directory</p>
+<p>http://packages.ubuntu.com/</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/precompiled-opencv3-caffe/" class="u-url">Precompiled OpenCV3 <span class="amp">&amp;</span> Caffe for&nbsp;Python3</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                Jed&nbsp;Frey
+            </span></p>
+            <p class="dateline"><a href="posts/precompiled-opencv3-caffe/" rel="bookmark"><time class="published dt-published" datetime="2017-01-29T11:35:57-05:00" title="January 2017">January 2017</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    <div>
+<p>Binaries:</p>
+<ul>
+<li><a href="files/opencv3_3.2.0-1_amd64.deb">opencv3_3.2.0-1_amd64.deb</a></li>
+<li><a href="files/caffe-distribute.tar.bz2">caffe-distribute.tar.bz2</a></li>
+</ul>
+<p>Install opencv3&nbsp;with:</p>
+<pre class="code literal-block"><span></span>dpkg -i opencv3_3.2.0-1_amd64.deb
+apt-get install --fix-broken --no-install-recommends --yes
+</pre>
+
+
+<p>Extract&nbsp;caffe:</p>
+<pre class="code literal-block"><span></span>tar -xzjf caffe-distribute.tar.bz2
+</pre>
+
+
+<p>Add caffe-distribute/bin to $PATH
+Add caffe-distribute/lib to $LD_LIBRARY_PATH
+Add caffe-distribute/python to&nbsp;$PYTHONPATH</p>
+<p>To make the changes persist across sessions you can add them to ~/.bashrc (if using&nbsp;bash)</p>
+<p>Example, assuming the archive was extracted to your home&nbsp;directory:</p>
+<pre class="code literal-block"><span></span>export PATH="$HOME/caffe-distribute/bin:$PATH"
+export PYTHONPATH="$HOME/caffe-distribute/python:$PYTHONPATH"
+export LD_LIBRARY_PATH="$HOME/caffe-distribute/lib:$LD_LIBRARY_PATH"
+</pre>
+
+
+<p>Install required libraries for&nbsp;caffe:</p>
+<pre class="code literal-block"><span></span>apt-get install --no-install-recommends --yes libgoogle-glog0v5 libboost-python1.58.0 libleveldb1v5 liblmdb0
+</pre>
+
+
+<p>There are multiple instructions&nbsp;online </p>
+<ul>
+<li><a href="https://www.google.com/search?q=compile+opencv3+ubuntu+16.04+python3">opencv3 for&nbsp;python3</a></li>
+<li><a href="https://www.google.com/search?q=caffe+python3+opencv">caffe for python3 <span class="amp">&amp;</span>&nbsp;opencv3</a></li>
+</ul>
+<p>Build:</p>
+<ul>
+<li>Ubuntu&nbsp;16.04</li>
+<li>x86_64</li>
+<li>CUDA&nbsp;8.0</li>
+<li>cudnn 5.1 for CUDA&nbsp;8.0</li>
+<li>Python&nbsp;3.5.1</li>
+<li>Numpy&nbsp;1.11.0</li>
+</ul>
+<p>Build&nbsp;Scripts:</p>
+<ul>
+<li><a href="https://gist.github.com/jed-frey/d01e2d5b39ef33207efda6e170b8788c">opencv3&nbsp;w/python3</a></li>
+<li>
+<p><a href="https://gist.github.com/jed-frey/f14399fc7500f03d4c43448c318b3245">opencv3&nbsp;w/python3</a></p>
+</li>
+<li>
+<p><a href="files/opencv3_3.2.0-1_amd64.deb">opencv3_3.2.0-1_amd64.deb</a></p>
+</li>
+</ul>
+<h2>Build&nbsp;Scripts</h2>
+<p>GithubGists of the build scripts for OpenCV3 and Caffe. Both of these should work in a new <a href="https://wiki.ubuntu.com/DebootstrapChroot">Ubuntu 16.04 debootstrap</a>&nbsp;environment.</p>
+<h3>OpenCV3 Build&nbsp;Script</h3>
+<script src="https://gist.github.com/jed-frey/d01e2d5b39ef33207efda6e170b8788c.js"></script><h3>Caffe Build&nbsp;Script</h3>
+<script src="https://gist.github.com/jed-frey/f14399fc7500f03d4c43448c318b3245.js"></script>
+</div>
     </div>
     </article>
 </div>

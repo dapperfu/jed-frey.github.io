@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://jed-frey.github.io/</loc>
-  <lastmod>2017-01-14T02:38:00Z</lastmod>
+  <lastmod>2017-01-29T16:46:00Z</lastmod>
  </url>
  <url>
   <loc>https://jed-frey.github.io/2017/</loc>
@@ -15,15 +15,27 @@
  </url>
  <url>
   <loc>https://jed-frey.github.io/archive.html</loc>
-  <lastmod>2017-01-14T02:47:00Z</lastmod>
+  <lastmod>2017-01-30T17:53:00Z</lastmod>
  </url>
  <url>
   <loc>https://jed-frey.github.io/categories.html.html</loc>
-  <lastmod>2017-01-14T02:47:00Z</lastmod>
+  <lastmod>2017-01-29T04:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://jed-frey.github.io/categories/</loc>
-  <lastmod>2017-01-14T02:29:00Z</lastmod>
+  <lastmod>2017-01-30T17:53:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://jed-frey.github.io/categories/debian/</loc>
+  <lastmod>2017-01-30T17:53:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://jed-frey.github.io/categories/debugging/</loc>
+  <lastmod>2017-01-30T17:53:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://jed-frey.github.io/categories/ubuntu/</loc>
+  <lastmod>2017-01-30T17:53:00Z</lastmod>
  </url>
  <url>
   <loc>https://jed-frey.github.io/galleries/</loc>
@@ -36,6 +48,14 @@
  <url>
   <loc>https://jed-frey.github.io/listings/</loc>
   <lastmod>2017-01-14T02:29:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://jed-frey.github.io/posts/debugging-shared-library-not-found/</loc>
+  <lastmod>2017-01-30T17:53:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://jed-frey.github.io/posts/precompiled-opencv3-caffe/</loc>
+  <lastmod>2017-01-29T16:46:00Z</lastmod>
  </url>
  <url>
   <loc>https://jed-frey.github.io/posts/test/</loc>
